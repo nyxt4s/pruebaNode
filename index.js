@@ -1,10 +1,9 @@
 import express from 'express';
 import userRoutes from './src/Routes/UserRoutes.js';
 import dotenv from "dotenv";
-var bodyParser = require('body-parser')
 
 const app = express();
-const jsonParser = bodyParser.json()
+app.use(express.json());
 
 // importamos las variables de entorno  
 dotenv.config();

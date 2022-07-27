@@ -12,17 +12,26 @@ const obtenerUsuario = (req, res) => {
 }
 
 const ModificarUsuario = (req, res) => {
+    let datosUsuario = req.body;
+    console.log(req.body);
     const idUsuario = Number(req.params.id);
     let usuario = user.find(user => user.id == idUsuario)
-    if (usuario){
-        req.body 
+    if(usuario){
+        usuario.nombre = datosUsuario.nombre;
+        usuario.edad = datosUsuario.edad;
+        usuario.genero = datosUsuario.genero;
+        usuario.intereses = datosUsuario.intereses;
+        res.json(usuario);
+    }
+    else{
+
     }
 }
 
 const EliminarUsuario = (req, res) => {
     const idUsuario = Number(req.params.id);
     let usuario = user.find(user => user.id == idUsuario)
-    // users.fi
+    
 
 
 }
